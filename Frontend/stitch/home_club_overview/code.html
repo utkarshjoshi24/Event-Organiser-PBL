@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#44ddc1",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb1c1",
+                    "surface-tint": "#4355b9",
+                    "secondary-container": "#68fadd",
+                    "surface-dim": "#dbd9e2",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fbf8ff",
+                    "on-tertiary-fixed-variant": "#8f003f",
+                    "on-surface-variant": "#454652",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#293ca0",
+                    "primary": "#24389c",
+                    "primary-fixed-dim": "#bac3ff",
+                    "surface-container-high": "#e9e7f0",
+                    "outline-variant": "#c5c5d4",
+                    "surface-container": "#efedf6",
+                    "tertiary": "#88003b",
+                    "background": "#fbf8ff",
+                    "on-primary-container": "#cacfff",
+                    "secondary": "#006b5c",
+                    "surface-container-low": "#f4f2fc",
+                    "inverse-primary": "#bac3ff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e3e1ea",
+                    "surface-bright": "#fbf8ff",
+                    "on-secondary-fixed": "#00201a",
+                    "on-secondary-container": "#007261",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00105c",
+                    "primary-container": "#3f51b5",
+                    "inverse-on-surface": "#f2eff9",
+                    "on-background": "#1a1b22",
+                    "secondary-fixed": "#68fadd",
+                    "primary-fixed": "#dee0ff",
+                    "surface-container-highest": "#e3e1ea",
+                    "on-surface": "#1a1b22",
+                    "tertiary-fixed": "#ffd9df",
+                    "on-tertiary-fixed": "#3f0018",
+                    "inverse-surface": "#2f3037",
+                    "on-tertiary-container": "#ffc3ce",
+                    "error-container": "#ffdad6",
+                    "outline": "#757684",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#005145",
+                    "tertiary-container": "#b40050"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 12px 40px -4px rgba(26, 27, 34, 0.06);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #24389c 0%, #3f51b5 100%);
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf8ff]/80 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full max-w-[1920px] mx-auto font-['Manrope'] tracking-tight leading-tight">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-[#24389c]">Kinetic Curator</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#24389c] font-bold border-b-2 border-[#24389c] pb-1 hover:text-[#24389c] transition-colors duration-300" href="#">Dashboard</a>
+<a class="text-[#1a1b22]/60 font-medium hover:text-[#24389c] transition-colors duration-300" href="#">Schedules</a>
+<a class="text-[#1a1b22]/60 font-medium hover:text-[#24389c] transition-colors duration-300" href="#">Attendees</a>
+<a class="text-[#1a1b22]/60 font-medium hover:text-[#24389c] transition-colors duration-300" href="#">Analytics</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container-high rounded-lg px-3 py-1.5 gap-2">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm placeholder:text-outline w-48" placeholder="Search events..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">settings</button>
+<div class="h-10 w-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile avatar" data-alt="Close up portrait of a professional male event coordinator with a friendly expression in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0rIZe6gpgKaw-V0r5E_Gwm97GDR0sdOCLN6d9bFAQmC8-uOMAk_AO-pHz2QmXvJ1MIjTxwi3mBd_PcwhTTOrZTSySJ10kQ8bCKLjUv3XddG7TrSPfCruVQfg-hWLpEb9wY5FnxaX8iSmefpEnCWC51TPJTAXzd4vfB47rUFu3AJpDOO_3lgHZ0y78fnqZVH9B_srcxXyEgQDZo-vz6TvZ3cJ9cwRqssK5ROwJMMa2qXwd1eJvRAnm0n0EVQy3-Xj-XCybdnch89fU"/>
+</div>
+</div>
+</nav>
+<!-- Side Navigation Shell (Hidden on small screens) -->
+<aside class="hidden lg:flex h-screen w-64 fixed left-0 top-0 z-40 bg-[#f4f2fc] flex flex-col p-6 gap-8 font-['Manrope'] font-semibold text-sm pt-28">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<p class="text-on-surface font-bold">Global Events</p>
+<p class="text-xs text-on-surface-variant opacity-70">Premium Tier</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#ffffff] text-[#24389c] rounded-xl shadow-sm translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">grid_view</span> Home
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" href="#">
+<span class="material-symbols-outlined">groups</span> Clubs
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" href="#">
+<span class="material-symbols-outlined">event</span> Events
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" href="#">
+<span class="material-symbols-outlined">edit_note</span> Forms
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span> Reports
+            </a>
+</div>
+<button class="mt-4 mx-2 py-3 bg-secondary-container text-on-secondary-container rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span> New Club
+        </button>
+<div class="mt-auto flex flex-col gap-1 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" href="#">
+<span class="material-symbols-outlined">help</span> Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" href="#">
+<span class="material-symbols-outlined">logout</span> Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-20 min-h-screen">
+<div class="max-w-7xl mx-auto px-8 py-12">
+<!-- Hero Section / Welcome -->
+<section class="mb-16">
+<div class="relative overflow-hidden rounded-3xl p-12 bg-surface-container-low">
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-widest mb-6 uppercase">Organizer Portal</span>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter mb-6 leading-[1.1]">
+                            Welcome back, <br/>Curator.
+                        </h1>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8 max-w-lg">
+                            Manage your creative ecosystems and track live event performance from your central command center. Your next sell-out starts here.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="primary-gradient text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add_circle</span> Create New Event
+                            </button>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-xl font-bold border-2 border-primary/5 hover:bg-white transition-all shadow-sm">
+                                View Analytics
+                            </button>
+</div>
+</div>
+<!-- Decorative background element -->
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute right-20 bottom-0 w-64 h-64 bg-primary/5 rounded-full blur-2xl"></div>
+</div>
+</section>
+<!-- Clubs Section -->
+<section>
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Active Clubs</h2>
+<p class="text-on-surface-variant mt-2">Manage your core organization sub-groups</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                        View All Clubs <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Bento-style Grid for Clubs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Club Card: Swaragini -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden editorial-shadow transition-all hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img alt="Club cover image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cinematic shot of a vibrant musical concert with colorful spotlights, silhouettes of a crowd, and atmospheric stage haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtRZs5sAQrdhKynZDEdP0n7KA3uwCUm4jlV-NVwpQSNGw_uGGyPRaVVKJBUJhuq1FkHxkz3lnykCmdB7Uyronth7-aIWcL61dYbj-n1YgxO50F9OF72u1A88T-lCyApA9ZHYCQ0KW2GiNqc38i_kX8DLH-bTIgyOwAisnX7jtRJ34uq0pZSQDfaufV4qoF7YyR_SOEByvBjkgTOLq2Dn3gcs7hxsWxWeNdHo_5-H6hjQP6k_TWr8qZ2rxyLlRhwo3kPu0bJUjZBuXS"/>
+<div class="absolute top-6 left-6 w-16 h-16 bg-white rounded-2xl p-2 shadow-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">music_note</span>
+</div>
+<div class="absolute top-6 right-6">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold shadow-sm">Live</span>
+</div>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Swaragini</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                                A premier cultural collective dedicated to classical and contemporary fusion music events across urban centers.
+                            </p>
+<div class="flex items-center justify-between pt-6 border-t border-surface-container">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Portrait of a woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyNce_0LOU42rkscXGl4JrHCsxJAvXAsm8IF6CtdOKWtBMXT_nJeSLfvUPvTljfPNtyoz-vELqfVRp1G5mCMnui7KguXwXPuAMjJS8WxRc6WbCYLfBRi9RT-P2AguLIQ3YtJhpuNUDvI581jwL_SZAiTNlXlFaOjt1QqxLW4yS02KRMbmayZxiZ5wecje78NhBXiaIhcxwmpwRJq3BiYGYK8ih71UyyVU39XKtpAhL_qfKFSKm5PNn_Kp7FhB9VHd0X-uwZPVjSZt1"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Portrait of a man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtpBU96oUKeNh6M5J0hn8692Zjz6NWPRjIiLW-9NXoWJh2eQ2xmB_HrfTHwbPdDr52XCERE2m3-QEZSfSLnrL4-l4BHt5w7_U8E_f_rrMQV5H-Cbf5393YGOyYKWRD5xNGOkvr3bC47iIhsY4aD4Edrdi88fWcdJJozRKkPmrdHN343H3pHcLTuZ-lSCboZPqXmeuBlOYHZbx4dRMUbHSW_2lyr0CHkAouJ18sjz_ecvYBJLZLUeqJXKNhIRRKScRlTSBtJNKe3W1b"/>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-surface-container flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+1.2k</div>
+</div>
+<button class="p-3 bg-surface-container-high rounded-xl text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Club Card: Synthoria -->
+<div class="group bg-surface-container-lowest rounded-3xl overflow-hidden editorial-shadow transition-all hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img alt="Club cover image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dynamic shot of a high-tech electronic dance music festival with neon lasers and a massive LED screen backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdKn1LPAzNQNytiLWqRpkc-4Zwb7yf85O8BoW577JRtva54HOPhWD0YNETsQCOM9u-KlR04zjb6diPjfH20UWmi71bpflkMjSnRd5if7Jfzc5-b8nEaIP9EvWGr3MDodQCp3pt1AeMQBI15L4GTjDB8BIJLqiKXFRUFZzQkghnPpW8GFanRKINaoaou1Li0b99UqrjqPPaP3gjrhw34PGgbEA8n6hagZGXBmimG_FiPYXVrsqUzEAP0V4wrt9KSu8cZqN4q15VHQf7"/>
+<div class="absolute top-6 left-6 w-16 h-16 bg-white rounded-2xl p-2 shadow-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+</div>
+<div class="absolute top-6 right-6">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold shadow-sm">Upcoming</span>
+</div>
+</div>
+<div class="p-8">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Synthoria</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                                Defining the future of digital audio experiences and underground synth-wave productions for the modern age.
+                            </p>
+<div class="flex items-center justify-between pt-6 border-t border-surface-container">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Portrait of a man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu5upLc7Ls89BierIHLwAV-CTfLbN4uTWKKeOWC0-uHebyR8bDXCrglthqYG0jdtQ2n7djbZJOiW1KFCuLSCM00uzmeb8ljhUtuwSMr-gc7B3-IketGkZY6Kg_q89YxC-ebbtyIYd-3jS_S7RJgH-7k1xLp6GfvtAooF3TTfNSRAnqoeJ5EwomrZTmg41uIbyOu6QPk89trjiOSY4lkhH5txsMaFUrpuJzR_9wMQulWWTbrJdrFK7bhO1NebjzVYTlx90dXpbI4mlz"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Portrait of a woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7a4lYLlX4-s9L4z_i00CXAENMfrf241jcv0LEn-XXlkqxdCZC5N9zrlZur7fSs2h2E9ygiSGXu43AvOf6G0MrvgNVIfAcLOTuwwUVW84oFI9BCvoXfidJ3m1ezHGFfHT_VEbdbfvF9yh5ugz7LR-Z4mCeNyVdkLUI5Y03c5oSscROZiPNsSXYAHbFZA8rWnkaAcTj7ZARZAAkCUDu7OSijckuk7cheJCGSfOVOd5gZwZLRLuPoc-Loh7L0WWPrgQXbtmAuvQexUNe"/>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-surface-container flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+840</div>
+</div>
+<button class="p-3 bg-surface-container-high rounded-xl text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Add New Club Placeholder -->
+<div class="mt-12">
+<button class="w-full py-10 border-2 border-dashed border-outline-variant/30 rounded-3xl group hover:border-primary/40 transition-all flex flex-col items-center justify-center gap-4 bg-surface-container-low/50 hover:bg-surface-container-low">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-outline group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+</div>
+<div class="text-center">
+<p class="font-headline font-bold text-lg text-on-surface-variant">Launch a new club</p>
+<p class="text-sm text-outline">Scale your organizer footprint with a new entity</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Secondary Content Section -->
+<section class="mt-24 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-surface-container rounded-3xl p-8">
+<h3 class="font-headline text-xl font-bold mb-6">Recent Activity</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined">confirmation_number</span>
+</div>
+<div>
+<p class="text-sm font-semibold">New Ticket Sale</p>
+<p class="text-xs text-on-surface-variant">Swaragini: Monsoon Ragas • 2 mins ago</p>
+</div>
+<span class="ml-auto text-sm font-bold text-primary">+$45.00</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div>
+<p class="text-sm font-semibold">Member Joined</p>
+<p class="text-xs text-on-surface-variant">Synthoria: Digital Pulse • 15 mins ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4 opacity-60">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-semibold">Venue Confirmed</p>
+<p class="text-xs text-on-surface-variant">Grand Arena • 1 hour ago</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary-container rounded-3xl p-8 text-on-primary-container">
+<h3 class="font-headline text-xl font-bold mb-4">Current Reach</h3>
+<div class="mt-8">
+<p class="text-5xl font-extrabold tracking-tighter mb-2">12.4k</p>
+<p class="text-sm font-medium opacity-80 uppercase tracking-widest">Total Attendees</p>
+</div>
+<div class="mt-8 pt-8 border-t border-on-primary-container/20">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-2xl font-bold">84%</p>
+<p class="text-xs opacity-70">Engagement Rate</p>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-4xl">trending_up</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Mobile Nav -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface glass-header border-t border-outline-variant/10 flex items-center justify-around px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-medium">Clubs</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">event</span>
+<span class="text-[10px] font-medium">Events</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium">Reports</span>
+</button>
+</div>
+</body></html>

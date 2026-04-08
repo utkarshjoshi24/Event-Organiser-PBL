@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic Curator - Create New</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-fixed-dim": "#44ddc1",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#ffb1c1",
+                "surface-tint": "#4355b9",
+                "secondary-container": "#68fadd",
+                "surface-dim": "#dbd9e2",
+                "on-secondary": "#ffffff",
+                "surface": "#fbf8ff",
+                "on-tertiary-fixed-variant": "#8f003f",
+                "on-surface-variant": "#454652",
+                "error": "#ba1a1a",
+                "on-primary-fixed-variant": "#293ca0",
+                "primary": "#24389c",
+                "primary-fixed-dim": "#bac3ff",
+                "surface-container-high": "#e9e7f0",
+                "outline-variant": "#c5c5d4",
+                "surface-container": "#efedf6",
+                "tertiary": "#88003b",
+                "background": "#fbf8ff",
+                "on-primary-container": "#cacfff",
+                "secondary": "#006b5c",
+                "surface-container-low": "#f4f2fc",
+                "inverse-primary": "#bac3ff",
+                "on-error": "#ffffff",
+                "surface-variant": "#e3e1ea",
+                "surface-bright": "#fbf8ff",
+                "on-secondary-fixed": "#00201a",
+                "on-secondary-container": "#007261",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#00105c",
+                "primary-container": "#3f51b5",
+                "inverse-on-surface": "#f2eff9",
+                "on-background": "#1a1b22",
+                "secondary-fixed": "#68fadd",
+                "primary-fixed": "#dee0ff",
+                "surface-container-highest": "#e3e1ea",
+                "on-surface": "#1a1b22",
+                "tertiary-fixed": "#ffd9df",
+                "on-tertiary-fixed": "#3f0018",
+                "inverse-surface": "#2f3037",
+                "on-tertiary-container": "#ffc3ce",
+                "error-container": "#ffdad6",
+                "outline": "#757684",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed-variant": "#005145",
+                "tertiary-container": "#b40050"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen overflow-x-hidden">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf8ff]/80 dark:bg-[#1a1b22]/80 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-[#24389c] dark:text-[#fbf8ff]">Kinetic Curator</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-[#1a1b22]/60 dark:text-[#fbf8ff]/60 font-medium hover:text-[#24389c] transition-colors duration-300" href="#">Dashboard</a>
+<a class="text-[#1a1b22]/60 dark:text-[#fbf8ff]/60 font-medium hover:text-[#24389c] transition-colors duration-300" href="#">Schedules</a>
+<a class="text-[#1a1b22]/60 dark:text-[#fbf8ff]/60 font-medium hover:text-[#24389c] transition-colors duration-300" href="#">Attendees</a>
+<a class="text-[#1a1b22]/60 dark:text-[#fbf8ff]/60 font-medium hover:text-[#24389c] transition-colors duration-300" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">settings</button>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<img alt="User profile avatar" class="rounded-full" data-alt="Stylized avatar of a professional event manager with a clean minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkGPnxYzPOjhqbxw0ZlAo52XDwQ_1svwaqGPW8C3UWf_94Jm_fc9RLNUZfnktzDJZfKeDtTPlk29_-TnG4uy0lP81Lf12-YyZ5JBYsKBt4RBwfT8v0DNVujWSU-sf_Z4O0yOs5PJ6evf_1YI-o3x8exfLzTZEq5ux5eP0JnBwz85lAjDlll_AgcPp6G10Zh6MKHcdltwTTPFvPnf2i8FPPfWGeYEExhWgFBNhc0fNsMNQbSdjYVXRhersaeL-xhhtSoRQgkDnwtCLo"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
+<!-- Left Column: Context & Stepper -->
+<aside class="lg:w-1/3 flex flex-col gap-8">
+<div>
+<h1 class="text-display-lg text-5xl font-extrabold tracking-tight text-primary mb-4 leading-tight">Create New Momentum</h1>
+<p class="text-lg text-on-surface-variant leading-relaxed">Organize your next masterpiece. Choose between launching a community hub or a specific event experience.</p>
+</div>
+<!-- Custom Stepper (High-End Design) -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold">1</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-primary">Core Details</span>
+<span class="text-xs text-on-surface-variant opacity-60">Identity &amp; Vision</span>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold">2</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface-variant opacity-40">Configuration</span>
+<span class="text-xs text-on-surface-variant opacity-40">Time &amp; Logistics</span>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold">3</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-on-surface-variant opacity-40">Visuals</span>
+<span class="text-xs text-on-surface-variant opacity-40">Hero Media &amp; Brand</span>
+</div>
+</div>
+</div>
+<div class="mt-12 p-6 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="tips_and_updates">tips_and_updates</span>
+<p class="text-sm font-medium text-on-surface-variant">Pro Tip: Clubs are permanent communities, while Events are time-bound experiences. You can link multiple events to a single club later.</p>
+</div>
+</aside>
+<!-- Right Column: The "Editorial" Form -->
+<section class="lg:w-2/3">
+<div class="bg-surface-container-lowest rounded-xl p-8 lg:p-12 shadow-[0_12px_40px_-4px_rgba(26,27,34,0.06)] relative overflow-hidden">
+<!-- Entity Toggle -->
+<div class="flex bg-surface-container-low p-1.5 rounded-xl mb-12 w-fit">
+<button class="px-8 py-3 rounded-lg font-headline font-bold text-sm bg-surface-container-lowest text-primary shadow-sm transition-all">New Event</button>
+<button class="px-8 py-3 rounded-lg font-headline font-semibold text-sm text-on-surface-variant/70 hover:bg-surface-container-high transition-all">New Club</button>
+</div>
+<form class="space-y-10">
+<!-- Section: Identity -->
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-sm font-bold text-primary tracking-wide uppercase">Event Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-sm px-4 py-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="e.g. Kinetic Design Summit 2024" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-primary tracking-wide uppercase">Category</label>
+<select class="w-full bg-surface-container-high border-none rounded-sm px-4 py-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all">
+<option>Workshops</option>
+<option>Networking</option>
+<option>Conferences</option>
+<option>Cultural</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-primary tracking-wide uppercase">Vision &amp; Description</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-sm px-4 py-4 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Describe the energy and impact of this event..." rows="4"></textarea>
+</div>
+</div>
+<!-- Section: Logistics (Tonal Shift Background) -->
+<div class="p-8 bg-surface-container-low rounded-xl space-y-8">
+<h3 class="font-headline font-extrabold text-xl text-on-surface">Logistics &amp; Scale</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant/80 tracking-wide uppercase">Date &amp; Start Time</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-sm px-4 py-4 focus:ring-2 focus:ring-primary/20 transition-all" type="datetime-local"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant/80 tracking-wide uppercase">Capacity Limit</label>
+<div class="flex items-center gap-4 bg-surface-container-lowest rounded-sm px-4">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<input class="w-full border-none bg-transparent py-4 focus:ring-0" placeholder="500" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Media -->
+<div class="space-y-6">
+<label class="text-sm font-bold text-primary tracking-wide uppercase">Cover Media</label>
+<div class="group relative border-2 border-dashed border-outline-variant/30 rounded-xl p-12 flex flex-col items-center justify-center gap-4 hover:border-primary/40 hover:bg-primary/5 transition-all cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="upload_file">upload_file</span>
+</div>
+<div class="text-center">
+<p class="font-headline font-bold text-on-surface">Drag and drop high-res imagery</p>
+<p class="text-sm text-on-surface-variant">Recommended: 16:9 Aspect Ratio, Min 1920x1080</p>
+</div>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+<!-- Preview Mockup (Editorial Style) -->
+<div class="grid grid-cols-3 gap-4">
+<div class="aspect-video bg-surface-container-high rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all cursor-pointer">
+<img alt="Sample event" class="w-full h-full object-cover" data-alt="Atmospheric wide shot of a modern design conference stage with blue ambient lighting and blurred audience" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6-TxVTbhNwr4PxtIDdkMQ57dfQ7HJERpwTa-yH463bNnXUg0x9Tl6p2Md5bzRKyWSW9jPrEJBWe4TRcpFUbL7xKG5X7bxuNgEyAda1aC1V5MgDRQggsfuEgE4E-T8kcKvRC61XhSHLolJGgksmJtHPPtnd6jnGHrh4SxNDtGCWzA0XpM_zwt-KV5AREiEfJutswrBKSO_AmQtKOSmTwA8OtNgsZIHvFkCmOTEH1gTeujIBz0KWJ-e31YEjkChrT41L3kt1P1MuTl9"/>
+</div>
+<div class="aspect-video bg-surface-container-high rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all cursor-pointer">
+<img alt="Sample event" class="w-full h-full object-cover" data-alt="Close-up of vibrant music festival lights and people dancing in soft focus bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQoM0eXyNRqJWEKxr598LLAIdqhDPQOkE2xf4lh6VrY49tAGLUPZkSSAPxf99ofydkBaaMTQpswb7WCbPFbexMCTZlKxR9jWoUKtQoFzuNu4xEcjzEh0YAUaEBq3fpp_w9J6HSmxqQmlxjLqJ03CeKWRJwEALDZH6AG2n0gX2XT1yBOcmx6ZPcuMAxKJzZuuCyfSqZazS3XAiJMLk76_tt3qePRWsT95vm6i7sKdkHx-u9dyauf_6TUf8wjH8v6G5FonPuAnDI2vyA"/>
+</div>
+<div class="aspect-video flex items-center justify-center border border-outline-variant/20 rounded-lg text-on-surface-variant/40">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-outline-variant/10">
+<button class="text-primary font-headline font-bold hover:translate-x-[-4px] transition-transform flex items-center gap-2" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                            Save Draft
+                        </button>
+<button class="w-full sm:w-auto px-12 py-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-extrabold text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3" type="submit">
+                            Launch Experience
+                            <span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</button>
+</div>
+</form>
+<!-- Floating Decor (Kinetic Curator Style) -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+</section>
+</main>
+<!-- Side Navigation (Suppressed for focused task, but kept for desktop context if needed - Here showing how it would look in the 'Clubs' context) -->
+<!-- Not rendered here to prioritize the focused "New" journey as per UX Goal rules -->
+<!-- Mobile Navigation Shell (Literal Transcription) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-[#fbf8ff]/80 backdrop-blur-xl border-t border-outline-variant/10 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="grid_view" data-weight="fill" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-[10px] font-medium">Clubs</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[10px] font-medium">Events</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="text-[10px] font-medium">Forms</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant/60">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-medium">Reports</span>
+</button>
+</nav>
+</body></html>
