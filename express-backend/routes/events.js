@@ -13,23 +13,17 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
-  try {
-    const newEvent = await Event.create(req.body);
-    res.status(201).json(newEvent);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
+router.post(['/','/create'], async (req,res)=>{
+   try{
+      const newEvent = await Event.create({
+         ...req.body,
+         id:"event_"+Date.now()
+      });
 
-// Alias for frontend fetching /api/events/create
-router.post('/create', async (req, res) => {
-  try {
-    const newEvent = await Event.create(req.body);
-    res.status(201).json(newEvent);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+      res.status(201).json(newEvent);
+   }catch(err){
+      res.status(400).json({error:err.message});
+   }
 });
 
 router.delete('/:id', async (req, res) => {
