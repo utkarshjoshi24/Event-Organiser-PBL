@@ -15,13 +15,16 @@ const Login = () => {
       const response = await fetch('http://localhost:5002/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
+        credentials: 'omit' // Replace 'omit' with 'include' when cross-origin session cookies are desired
       });
       if (!response.ok) {
         throw new Error('Invalid credentials');
       }
       const data = await response.json();
-      localStorage.setItem('user', JSON.stringify(data));
+      
+      // Removed localStorage item - backend tracks session via cookies.
+      
       // Simulate dashboard rendering on role
       if (data.role === 'admin' || role === 'core') {
         navigate('/');

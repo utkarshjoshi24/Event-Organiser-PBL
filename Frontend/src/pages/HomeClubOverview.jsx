@@ -1,8 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const HomeClubOverview = () => {
   const [clubs, setClubs] = React.useState([]);
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      // Send a request to the backend to destroy the session cookie
+      await fetch('http://localhost:5002/api/auth/logout', { method: 'POST', credentials: 'omit' });
+      navigate('/login');
+    } catch (err) {
+      console.error('Logout failed', err);
+    }
+  };
 
   React.useEffect(() => {
     fetch('http://localhost:5002/api/clubs')
@@ -94,9 +105,9 @@ const HomeClubOverview = () => {
 <Link className="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" to="#">
 <span className="material-symbols-outlined">help</span> Support
             </Link>
-<Link className="flex items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all" to="/login">
+<button onClick={handleLogout} className="flex w-full items-center gap-3 px-4 py-3 text-[#1a1b22]/70 hover:bg-[#efedf6] transition-all text-left">
 <span className="material-symbols-outlined">logout</span> Logout
-            </Link>
+            </button>
 </div>
 </aside>
 {/* Main Content Canvas */}

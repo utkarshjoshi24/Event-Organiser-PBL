@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import cookieSession from 'cookie-session';
 import authRoutes from './routes/auth.js';
 import clubRoutes from './routes/clubs.js';
 import eventRoutes from './routes/events.js';
@@ -11,8 +12,23 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || ['http://localhost:5173', 'http://127.0.0.1:5173'].indexOf(origin) !== -1 || origin.includes('vercel.app') || origin.includes('onrender.com')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
+
+app.use(cookieSession({
+  name: 'session',
+  keys: [process.env.SESSION_SECRET || 'secret-key-123'],
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -28,6 +44,16 @@ mongoose.connect(MONGODB_URI)
 
 const PORT = process.env.PORT || 5002;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get('/', (req, res) => {
+  res.send("Welcome to Event Organiser API!");
 });
+
+// For Render & local testing
+if (process.env.NODE_ENV !== 'production' || process.env.RENDER) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+// For Vercel Serverless
+export default app;
