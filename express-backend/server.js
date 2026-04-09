@@ -1,5 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieSession from 'cookie-session';
@@ -47,8 +49,15 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 const PORT = process.env.PORT || 5002;
 
-app.get('/', (req, res) => {
-  res.send("Welcome to Event Organiser API!");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve frontend static files in production
+app.use(express.static(path.join(__dirname, '../Frontend/dist')));
+
+// Catch-all route to serve the React frontend for anything that isn't an API route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../Frontend/dist/index.html'));
 });
 
 // For Render & local testing

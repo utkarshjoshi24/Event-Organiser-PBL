@@ -7,7 +7,7 @@ const ClubDashboard = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:5002/api/auth/logout', { method: 'POST', credentials: 'omit' });
+      await fetch('/api/auth/logout', { method: 'POST', credentials: 'omit' });
       navigate('/login');
     } catch (err) {
       console.error('Logout failed', err);
@@ -15,7 +15,7 @@ const ClubDashboard = () => {
   };
 
   React.useEffect(() => {
-    fetch('http://localhost:5002/api/events') // fetching all events
+    fetch('/api/events') // fetching all events
       .then(res => res.json())
       .then(data => setEvents(data))
       .catch(err => console.error('Failed to fetch events', err));

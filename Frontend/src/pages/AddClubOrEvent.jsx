@@ -9,7 +9,7 @@ const AddClubOrEvent = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     try {
-      const res = await fetch('http://localhost:5002/api/events/create', {
+      const res = await fetch('/api/events/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -33,7 +33,7 @@ const AddClubOrEvent = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     try {
-      const res = await fetch('http://localhost:5002/api/clubs', {
+      const res = await fetch('/api/clubs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

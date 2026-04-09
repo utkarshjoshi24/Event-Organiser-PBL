@@ -5,7 +5,7 @@ const Events = () => {
   const [events, setEvents] = React.useState([]);
 
   React.useEffect(() => {
-    fetch('http://localhost:5002/api/events')
+    fetch('/api/events')
       .then(res => res.json())
       .then(data => setEvents(data))
       .catch(err => console.error('Failed to fetch events', err));
@@ -14,7 +14,7 @@ const Events = () => {
   const deleteEvent = async (id) => {
     if (!window.confirm("Are you sure you want to delete this event?")) return;
     try {
-      const res = await fetch(`http://localhost:5002/api/events/${id}`, { method: 'DELETE' });
+      const res = await fetch(`/api/events/${id}`, { method: 'DELETE' });
       if (res.ok) {
         setEvents(prev => prev.filter(e => e.id !== id));
       } else {

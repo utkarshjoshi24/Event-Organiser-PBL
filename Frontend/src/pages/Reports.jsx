@@ -5,7 +5,7 @@ const Reports = () => {
   const [events, setEvents] = React.useState([]);
 
   React.useEffect(() => {
-    fetch('http://localhost:5002/api/events')
+    fetch('/api/events')
       .then(res => res.json())
       .then(data => setEvents(data))
       .catch(err => console.error('Failed to fetch events', err));

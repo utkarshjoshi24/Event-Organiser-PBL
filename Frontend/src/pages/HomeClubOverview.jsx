@@ -8,7 +8,7 @@ const HomeClubOverview = () => {
   const handleLogout = async () => {
     try {
       // Send a request to the backend to destroy the session cookie
-      await fetch('http://localhost:5002/api/auth/logout', { method: 'POST', credentials: 'omit' });
+      await fetch('/api/auth/logout', { method: 'POST', credentials: 'omit' });
       navigate('/login');
     } catch (err) {
       console.error('Logout failed', err);
@@ -16,7 +16,7 @@ const HomeClubOverview = () => {
   };
 
   React.useEffect(() => {
-    fetch('http://localhost:5002/api/clubs')
+    fetch('/api/clubs')
       .then(res => res.json())
       .then(data => setClubs(data))
       .catch(err => console.error('Failed to fetch clubs', err));
@@ -25,7 +25,7 @@ const HomeClubOverview = () => {
   const deleteClub = async (id) => {
     if (!window.confirm("Are you sure you want to delete this club?")) return;
     try {
-      const res = await fetch(`http://localhost:5002/api/clubs/${id}`, { method: 'DELETE' });
+      const res = await fetch(`/api/clubs/${id}`, { method: 'DELETE' });
       if (res.ok) {
         setClubs(prev => prev.filter(c => c.id !== id));
       } else {
