@@ -30,4 +30,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedClub = await Club.findOneAndDelete({ id: req.params.id });
+    if (!deletedClub) {
+      const deletedByMongoId = await Club.findByIdAndDelete(req.params.id);
+      if (!deletedByMongoId) return res.status(404).json({ error: 'Club not found' });
+    }
+    res.json({ message: 'Club deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 export default router;

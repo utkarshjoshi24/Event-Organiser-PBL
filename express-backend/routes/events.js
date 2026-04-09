@@ -22,7 +22,27 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Assuming there's a file at api/events/create/route.js or [id]/route.js in Next.js
-// We can add placeholders or implement them based on typical usage
+// Alias for frontend fetching /api/events/create
+router.post('/create', async (req, res) => {
+  try {
+    const newEvent = await Event.create(req.body);
+    res.status(201).json(newEvent);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedEvent = await Event.findOneAndDelete({ id: req.params.id });
+    if (!deletedEvent) {
+      const deletedByMongoId = await Event.findByIdAndDelete(req.params.id);
+      if (!deletedByMongoId) return res.status(404).json({ error: 'Event not found' });
+    }
+    res.json({ message: 'Event deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 export default router;
