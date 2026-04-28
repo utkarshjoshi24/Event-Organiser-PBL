@@ -23,8 +23,8 @@ router.post('/login', async (req, res) => {
 
 router.post('/register', async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    const user = await User.create({ name, email, password });
+    const { name, email, password, role } = req.body;
+    const user = await User.create({ name, email, password, role: role || 'participant' });
     
     // Set user session
     req.session.userId = user._id;
